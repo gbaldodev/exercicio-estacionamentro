@@ -39,12 +39,7 @@ class parquimetro{
   
         
 }
-/**
- * Falta colocar css --1
- * Botao para exibir o troco e calculo, BOTAO NAO H1
- * colocar a proibicao de numeros menor que zero ou negativo e estiliza pra ficar vermelho 
- * que me lembro e so boa noite !
- */
+
 
 
 
