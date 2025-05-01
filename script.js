@@ -25,14 +25,26 @@ class parquimetro{
             this.valorSerpago = 3.00;
             console.log("o valor a ser pago e de 3 reais");
         }
-    }
-    trocoFinal(){
+
+        if (this.valorInserido <= 0){
+            alert("INSIRA UM VALOR VALIDO");
+            document.getElementById("dinheiro").style.border = "2px solid red";
+        }
+        document.getElementById('exibircobranca').innerText = "O valor cobrado foi : R$" + this.valorSerpago;
+    }    
+      trocoFinal(){
         this.trocoFinal = this.valorInserido - this.valorSerpago;
-        console.log(this.trocoFinal);
-    }
+        document.getElementById('exibirtroco').innerText = "O valor de troco sera : R$" + this.trocoFinal;
+      }
+  
         
 }
-    
+/**
+ * Falta colocar css --1
+ * Botao para exibir o troco e calculo, BOTAO NAO H1
+ * colocar a proibicao de numeros menor que zero ou negativo e estiliza pra ficar vermelho 
+ * que me lembro e so boa noite !
+ */
 
 
 
