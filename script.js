@@ -5,37 +5,61 @@ class parquimetro{
         this.valorInserido = 0;
         this.valorSerpago= 0;
     }
-    pegarTempo(){
+    /**pegarTempo(){
         this.valorTempo = parseFloat(document.getElementById('tempo').value);
         console.log(this.valorTempo);
-    }
+    }*/
     pegarValor(){
         this.valorInserido = parseFloat(document.getElementById('dinheiro').value);
         console.log(this.valorInserido);
     }
     calculoCusto(){
         
-        if (this.valorTempo <= 30) {
-            this.valorSerpago = 1.00;
-             console.log("o valor a ser pago e de 1 real");
-        }else if (this.valorTempo <= 60){
-            this.valorSerpago = 1.75;
-            console.log("o valor a ser pago e de 1,75 reais");
-        }else{
+        if (this.valorInserido >= 3.00) {
             this.valorSerpago = 3.00;
-            console.log("o valor a ser pago e de 3 reais");
+            this.valorTempo = 120.0;
+             console.log(this.valorTempo);
+             console.log("valor inserido " + this.valorInserido);
+        }else if (this.valorInserido >= 1.75){
+            this.valorSerpago = 1.75;
+            this.valorTempo = 60.0;
+            console.log(this.valorTempo);
+            console.log("valor inserido " + this.valorInserido);
         }
+        else if (this.valorInserido >= 1.00){
+            this.valorSerpago = 1.0;
+            this.valorTempo = 30.0;
+            console.log(this.valorTempo);
+            console.log("valor inserido " + this.valorInserido);
+        }
+        
+       
 
         if (this.valorInserido <= 0){
             alert("INSIRA UM VALOR VALIDO");
             document.getElementById("dinheiro").style.border = "2px solid red";
+            return;
         }
         document.getElementById('exibircobranca').innerText = "O valor cobrado foi : R$" + this.valorSerpago;
     }    
       trocoFinal(){
         this.trocoFinal = this.valorInserido - this.valorSerpago;
         document.getElementById('exibirtroco').innerText = "O valor de troco sera : R$" + this.trocoFinal;
+        console.log(this.trocoFinal);
       }
+      showHoras(){
+        this.showHoras = this.valorTempo;
+        document.getElementById('tempo').innerText = " Tempo Disponivel :" + this.showHoras + " minutos.";
+      }
+      limparCampos() {
+        document.getElementById('exibircobranca').innerText = "O valor cobrado foi:";
+        document.getElementById('exibirtroco').innerText = "O valor de troco sera : R$";
+        document.getElementById('tempo').innerText = "Tempo Disponível:";
+        document.getElementById("dinheiro").value = "";
+        this.valorTempo = 0;
+        this.valorInserido = 0;
+        this.valorSerpago = 0;
+    }
   
         
 }

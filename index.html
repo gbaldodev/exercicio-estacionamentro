@@ -11,13 +11,7 @@
     <h1> Parquimetro </h1>
 <div id="containergeral">
  <div id="tempoDecorrido">
-    <label for="tempo">Quanto tempo foi decorrido :</label>
-    <select id="tempo">
-        <option value="30">30 minutos</option>
-        <option value="60">60 minutos</option>
-        <option value="120">120 minutos</option>
-    </select>
-    <button onclick="meuParquimetro.pegarTempo()">Enviar</button>
+    <p id="tempo"> Tempo Disponivel :</p>
  </div>   
  <div id="pegarvalor">
    <label for="dinheiro">Qual valor usara para pagar ? :</label>
@@ -26,10 +20,14 @@
  </div>
  
 </div>
-<button id="botaofinal" onclick="meuParquimetro.calculoCusto(); meuParquimetro.trocoFinal()">Realizar calculo</button>
+<button id="botaofinal" onclick="meuParquimetro.calculoCusto(); meuParquimetro.trocoFinal(); meuParquimetro.showHoras();">Realizar calculo</button>
 <div id="container2">
+
+<diV id="p">
 <p id="exibircobranca">O valor cobrado foi:</p>
 <p id="exibirtroco">Seu troco e de : </p>
+</diV>
+<button onclick="meuParquimetro.limparCampos()">Limpar Campos</button>
 </div>
 
     
