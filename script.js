@@ -9,8 +9,7 @@ class parquimetro{
         this.valorInserido = parseFloat(document.getElementById('dinheiro').value);
         console.log(this.valorInserido);
     }
-    calculoCusto(){
-        
+    calculoCusto(){       
         if (this.valorInserido >= 3.00) {
             this.valorSerpago = 3.00;
             this.valorTempo = 120.0;
@@ -28,9 +27,6 @@ class parquimetro{
             console.log(this.valorTempo);
             console.log("valor inserido " + this.valorInserido);
         }
-        
-       
-
         if (this.valorInserido <= 0){
             alert("INSIRA UM VALOR VALIDO");
             document.getElementById("dinheiro").style.border = "2px solid red";
