@@ -5,10 +5,6 @@ class parquimetro{
         this.valorInserido = 0;
         this.valorSerpago= 0;
     }
-    /**pegarTempo(){
-        this.valorTempo = parseFloat(document.getElementById('tempo').value);
-        console.log(this.valorTempo);
-    }*/
     pegarValor(){
         this.valorInserido = parseFloat(document.getElementById('dinheiro').value);
         console.log(this.valorInserido);
@@ -44,7 +40,7 @@ class parquimetro{
     }    
       trocoFinal(){
         this.trocoFinal = this.valorInserido - this.valorSerpago;
-        document.getElementById('exibirtroco').innerText = "O valor de troco sera : R$" + this.trocoFinal.toFixed(2);
+        document.getElementById('exibirtroco').innerText = "O valor de troco sera : R$" + this.trocoFinal.toixed(2);
         console.log(this.trocoFinal);
       }
       showHoras(){
