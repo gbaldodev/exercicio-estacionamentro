@@ -40,7 +40,7 @@ class parquimetro{
     }    
       trocoFinal(){
         this.trocoFinal = this.valorInserido - this.valorSerpago;
-        document.getElementById('exibirtroco').innerText = "O valor de troco sera : R$" + this.trocoFinal.toixed(2);
+        document.getElementById('exibirtroco').innerText = "O valor de troco sera : R$" + this.trocoFinal.toFixed(2);
         console.log(this.trocoFinal);
       }
       showHoras(){
