@@ -9,7 +9,16 @@ class parquimetro{
         this.valorInserido = parseFloat(document.getElementById('dinheiro').value);
         console.log(this.valorInserido);
     }
-    calculoCusto(){       
+    calculoCusto(){   
+        if (this.valorInserido <= 0){
+            alert("INSIRA UM VALOR VALIDO");
+            document.getElementById("dinheiro").style.border = "2px solid red";
+            return;
+        }
+        else {
+            document.getElementById("dinheiro").style.border = "";
+        }
+
         if (this.valorInserido >= 3.00) {
             this.valorSerpago = 3.00;
             this.valorTempo = 120.0;
@@ -27,21 +36,16 @@ class parquimetro{
             console.log(this.valorTempo);
             console.log("valor inserido " + this.valorInserido);
         }
-        if (this.valorInserido <= 0){
-            alert("INSIRA UM VALOR VALIDO");
-            document.getElementById("dinheiro").style.border = "2px solid red";
-            return;
-        }
+       
         document.getElementById('exibircobranca').innerText = "O valor cobrado foi : R$" + this.valorSerpago;
     }    
       trocoFinal(){
-        this.trocoFinal = this.valorInserido - this.valorSerpago;
-        document.getElementById('exibirtroco').innerText = "O valor de troco sera : R$" + this.trocoFinal.toFixed(2);
+        let troco = this.valorInserido - this.valorSerpago;
+        document.getElementById('exibirtroco').innerText = "O valor de troco sera : R$" + troco.toFixed(2);
         console.log(this.trocoFinal);
       }
       showHoras(){
-        this.showHoras = this.valorTempo;
-        document.getElementById('tempo').innerText = " Tempo Disponivel :" + this.showHoras + " minutos.";
+        document.getElementById('tempo').innerText = " Tempo Disponível: " + this.valorTempo + " minutos.";
       }
       limparCampos() {
         document.getElementById('exibircobranca').innerText = "O valor cobrado foi:";
@@ -55,6 +59,21 @@ class parquimetro{
   
         
 }
+function chamarall(){
+    /* era so CRIAR UMA FUNCTION ! */
+    meuParquimetro.pegarValor();
+    if (meuParquimetro.valorInserido > 0) {
+        meuParquimetro.calculoCusto();
+        meuParquimetro.trocoFinal();
+        meuParquimetro.showHoras();
+    }
+    else{
+        alert("INSIRA UM VALOR VALIDO");
+        document.getElementById("dinheiro").style.border = "2px solid red";
+        return;
+    }
+}
+
 
 
 

@@ -15,19 +15,19 @@
  </div>   
  <div id="pegarvalor">
    <label for="dinheiro">Qual valor usara para pagar ? :</label>
-    <input type="number" id="dinheiro" min="1.00">
-    <button onclick="meuParquimetro.pegarValor()">Enviar</button>
+    <input type="number" id="dinheiro" min="0.01">
+    
  </div>
  
 </div>
-<button id="botaofinal" onclick="meuParquimetro.calculoCusto(); meuParquimetro.trocoFinal(); meuParquimetro.showHoras();">Realizar calculo</button>
+<button id="botaofinal" onclick="chamarall()">Realizar calculo</button>
 <div id="container2">
 
 <diV id="p">
 <p id="exibircobranca">O valor cobrado foi:</p>
 <p id="exibirtroco">Seu troco e de : </p>
 </diV>
-<button onclick="meuParquimetro.limparCampos()">Limpar Campos</button>
+<button onclick="meuParquimetro.limparCampos()">Limpar</button>
 </div>
 
     
